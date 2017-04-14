@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HANGMAN</title>
+
+</head>
+<body>
+
+<h1 style="color:red;text-align: center; font-size:75px; text-Decoration:underline;" > HANGMAN</h1>
+<h3 style="color:blue;text-align: center; font-size:35px; margin-top: -20px">Modern Movie Classics</h3>
+
+<p id="wins"></p>
+<p id="losses"></p>
+<p id="guesses"></p>
+
+<div id="movieArea"></div>
+<div id="lettersArea"></div>
+
+<script type="text/javascript">
+
+var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var movies =["pulp fiction", "donnie darko", "eternal sunshine of the spotless mind", "there will be blood", "snatch", "the dark knight", "fight club", "the usual suspects", "toy story", "memento", "the sixth sense", "the matrix", "kiss kiss bang bang", "v for vendetta", "borat cultural learnings of america for make benefit glorious nation of kazakhstan", "el laberinto del fauno"];
+var selectedMovie = [];
+var randomMovie;
+var randomLetter;
+var userGuess
+
+var wins = 0;
+var losses = 0;
+var guesses = 10;
+		
+		randomMovie = movies[Math.floor(Math.random() * movies.length)];
+		alphabetSplit = letters[Math.floor(Math.random() * letters.length)];
+
+		document.getElementById("movieArea").innerHTML = selectedMovie.push(randomMovie.split(''));
+		document.getElementById("lettersArea").innerHTML = letters
+
+		console.log(selectedMovie);
+		console.log(letters)
+
+
+	document.onkeyup = function(event){
+		var userGuess = event.key;
+
+
+		for(var i = 0; i < wordLength; i++){
+  		selectedMovie.push('_');
+		}
+
+		/*selectedMovie.toString(); //returns _,_,_,_,_,_
+		selectedMovie[0] //returns the first underscore
+		selectedMovie[5] //returns the last underscore
+		selectedMovie[2] = 'A'; // Replaces the third underscore with the letter 'A' (zero based)
+		selectedMovie.toString(); //returns "_,_,A,_,_,_"
+
+		for (var i = 0; i > 0; i++){
+
+		}
+
+		if (userGuess === randomLetter){
+
+		}*/
+
+	}
+</script>
+
+
+
+</body>
+</html>

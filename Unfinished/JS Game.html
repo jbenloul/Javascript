@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HANGMAN</title>
+
+</head>
+<body>
+
+<h1 style="color:red;text-align: center; font-size:75px; text-Decoration:underline;" > HANGMAN</h1>
+<h3 style="color:blue;text-align: center; font-size:35px; margin-top: -20px">Modern Movie Classics</h3>
+
+<ul id="scoreboard">
+	<p id="wins"> Wins: </p>
+	<p id="losses"> Losses: </p>
+	<p id="guesses"> Guesses: </p>
+</ul>
+
+<div id="guess-area" style="text-align:center;"> . . . . . . . </div>
+<br>
+<div id="letters-area" style="text-align:center;"> ! ! ! ! ! ! ! ! ! </div>
+
+
+<script type="text/javascript">
+	var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+	var modernClassics =["pulp fiction", "donnie darko", "eternal sunshine of the spotless mind", "there will be blood", "snatch", "the dark knight", "fight club", "the usual suspects", "toy story", "memento", "the sixth sense", "the matrix", "kiss kiss bang bang", "v for vendetta", "borat cultural learnings of america for make benefit glorious nation of kazakhstan", "el laberinto del fauno"]
+	var selectedMovie = []
+	
+	var wins = 0;
+    var losses = 0;
+    var guesses = 10;
+    var counter
+	var randomMovie
+	var userGuess
+	var randomMovie
+
+		randomMovie = modernClassics[Math.floor(Math.random() * modernClassics.length)].split('');
+		selectedMovie.push(randomMovie);
+		console.log(randomMovie);
+		console.log(selectedMovie);
+		document.getElementById("guess-area").innerHTML = randomMovie
+		document.getElementById("letters-area").innerHTML = alphabet
+
+
+	function hangmanStart(){
+		randomMovie = modernClassics[Math.floor(Math.random() * modernClassics.length)].split('');
+		selectedMovie.push("randomMovie");
+		console.log(randomMovie);
+		document.getElementById("guess-area").innerHTML = randomMovie
+		document.getElementById("letters-area").innerHTML = alphabet
+
+		guesses = 10;
+		counter = "<p id='wins'> Wins: "+ wins + " </p>" + "<p id='losses'> Losses: "+ losses + " </p>" + "<p id='guesses'> Guesses: "+ guesses + " left</p>";
+		document.getElementById("scoreboard").innerHTML = counter
+	}
+
+
+	document.onkeyup = function(event){
+		 userGuess = event.key;
+
+	}
+
+</script>
+</body>
+</html>
