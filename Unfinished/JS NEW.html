@@ -6,12 +6,12 @@
 </head>
 <body>
 
-<h1 style="color:red;text-align: center; font-size:75px; text-Decoration:underline;" > HANGMAN</h1>
+<h1 style="color:red;text-align: center; font-size:75px; text-decoration: underline;" > HANGMAN</h1>
 <h3 style="color:blue;text-align: center; font-size:35px; margin-top: -20px">Modern Movie Classics</h3>
 
-<p id="wins"></p>
-<p id="losses"></p>
-<p id="guesses"></p>
+<p id="wins">Wins: </p>
+<p id="losses">Losses:</p>
+<p id="guesses">Guesses: 10 left</p>
 
 <div id="movieArea"></div>
 <div id="lettersArea"></div>
@@ -25,15 +25,24 @@ var randomMovie;
 var randomLetter;
 var userGuess
 
+var counter =
+	      "<li id='wins'> Wins:" + wins + "</li>" + 
+	      "<li id='losses'> Losses: " + losses + "</li>" + 
+	      "<li id='guesses'> Guesses: " + guesses + " left</li>";
+
 var wins = 0;
 var losses = 0;
 var guesses = 10;
+var wordslong
 		
 		randomMovie = movies[Math.floor(Math.random() * movies.length)];
 		alphabetSplit = letters[Math.floor(Math.random() * letters.length)];
+		selectedMovie.push(randomMovie.split(''));
 
-		document.getElementById("movieArea").innerHTML = selectedMovie.push(randomMovie.split(''));
+
+		document.getElementById("movieArea").innerHTML = selectedMovie
 		document.getElementById("lettersArea").innerHTML = letters
+
 
 		console.log(selectedMovie);
 		console.log(letters)
@@ -43,9 +52,17 @@ var guesses = 10;
 		var userGuess = event.key;
 
 
-		for(var i = 0; i < wordLength; i++){
-  		selectedMovie.push('_');
-		}
+		var mask = "";
+        wordslong = selectedMovie.length;
+
+    for (i = 0; i < wordslong; i++) {
+        mask += "*";
+        }
+
+    // Display 'ranword' in text box 'word'.
+        document.hangman.word.value = mask;
+
+		
 
 		/*selectedMovie.toString(); //returns _,_,_,_,_,_
 		selectedMovie[0] //returns the first underscore
@@ -59,7 +76,20 @@ var guesses = 10;
 
 		if (userGuess === randomLetter){
 
-		}*/
+		}
+
+
+for (var i = 0; i < letters.length; i++){
+var letterBtn = $("<button>");
+      letterBtn.addClass("letter-button letter letter-button-color");
+      letterBtn.attr("data-letter", letters[i]);
+      letterBtn.text(letters[i]);
+      $("#buttons").append(letterBtn)
+
+
+
+
+		*/
 
 	}
 </script>
