@@ -23,7 +23,7 @@ function gameStart(string){
 
 }
      	function changeImage(){
-		document.getElementById("hangImg").setAttribute ("src", "Hangman Photos/Hangman"+(guesses-1)+".png");
+		document.getElementById("hangImg").setAttribute ("src", "assets/images/Hangman"+(guesses-1)+".png");
  		}
 
 
@@ -35,7 +35,7 @@ function gameStart(string){
 		if (userGuess === randomLetter){
 			wins++;
 			console.log(wins);
-			document.getElementById("hangImg").setAttribute ("src", "Hangman Photos/Hangmanwin.png");
+			document.getElementById("hangImg").setAttribute ("src", "assets/images/Hangmanwin.png");
 			gameStart();
 
 		}
@@ -54,7 +54,7 @@ function gameStart(string){
 					losses++;
 					guesses = 10;
 					console.log(losses);
-					document.getElementById("hangImg").setAttribute ("src", "Hangman Photos/Hangmanpopup.png");
+					document.getElementById("hangImg").setAttribute ("src", "assets/images/Hangmanpopup.png");
 					gameStart();
 				}
 
